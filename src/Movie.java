@@ -50,4 +50,15 @@ public class Movie
         }
         return result;
     }
+    int getFrequentRenterPoints(int days)
+    {
+        if (this.priceCode == Movie.NEW_RELEASE && days > 1)
+        {
+            return 2;
+        }
+        else
+        {
+            return 1;
+        }
+    }
 }
