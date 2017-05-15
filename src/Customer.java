@@ -2,12 +2,13 @@
 import java.lang.*;
 import java.util.*;
 
-class Customer {
+class Customer
+{
 
     private String name;
     private Vector rentals = new Vector();
 
-    public Customer (String newname)
+    public Customer(String newname)
     {
         name = newname;
     }
@@ -17,7 +18,7 @@ class Customer {
         rentals.addElement(arg);
     }
 
-    public String getName ()
+    public String getName()
     {
         return name;
     }
@@ -33,12 +34,8 @@ class Customer {
         while (enum_rentals.hasMoreElements())
         {
             Rental rental = (Rental) enum_rentals.nextElement();
+            frequentRenterPoints += getFrequentRenterPoints(rental);
 
-            // add frequent renter points
-            frequentRenterPoints++;
-            // add bonus for a two day new release rental
-            if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1)
-                frequentRenterPoints++;
             //show figures for this rental
             result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + String.valueOf(rental.getCharge()) + "\n";
             totalAmount += rental.getCharge();
@@ -48,5 +45,18 @@ class Customer {
         result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
         return result;
     }
+
+    public int getFrequentRenterPoints(Rental each)
+    {
+        if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1)
+        {
+            return 2;
+        }
+        else
+        {
+            return 1;
+        }
+    }
 }
+
     
