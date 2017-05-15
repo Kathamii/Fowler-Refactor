@@ -21,5 +21,4 @@ public class RentalTest {
         Rental r1 = new Rental(m1,2);
         assertEquals(m1,r1.getMovie());
     }
-
 }
