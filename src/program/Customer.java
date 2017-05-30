@@ -39,7 +39,7 @@ public class Customer
         return result;
     }
 
-    private double getTotalCharge()
+    public double getTotalCharge()
     {
         double result = 0;
         Enumeration rentals = this.rentals.elements();
