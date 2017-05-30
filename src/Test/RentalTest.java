@@ -1,4 +1,6 @@
 import org.junit.Test;
+import program.Movie;
+import program.Rental;
 
 import static org.junit.Assert.*;
 
@@ -17,7 +19,7 @@ public class RentalTest {
     @Test
     public void getMovie() throws Exception {
 
-        Movie m1 = new Movie ("hallo",2);
+        Movie m1 = new Movie("hallo",2);
         Rental r1 = new Rental(m1,2);
         assertEquals(m1,r1.getMovie());
     }

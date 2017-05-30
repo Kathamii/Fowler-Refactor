@@ -1,4 +1,7 @@
 import org.junit.Test;
+import program.Customer;
+import program.Movie;
+import program.Rental;
 
 import static org.junit.Assert.*;
 
@@ -10,7 +13,7 @@ public class CustomerTest {
     public void addRental() throws Exception {
 
         Movie m1 = new Movie("hallo",1);
-        Rental r1 = new Rental (m1,2);
+        Rental r1 = new Rental(m1,2);
         Customer c1 = new Customer("hans");
         c1.addRental(r1);
     }
@@ -26,7 +29,7 @@ public class CustomerTest {
     public void statement() throws Exception {
 
         Customer c1 = new Customer("hans");
-        assertTrue(c1.statement()!= "");
+        assertTrue(!"".equals(c1.statement()));
     }
 
 }

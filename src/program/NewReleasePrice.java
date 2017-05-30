@@ -1,3 +1,5 @@
+package program;
+
 class NewReleasePrice extends Price {
 
     @Override
@@ -13,7 +15,7 @@ class NewReleasePrice extends Price {
     }
 
     @Override
-    int getFrequentRenterPoints(int days)
+    public int getFrequentRenterPoints(int days)
     {
         if (days > 1) return 2;
         return super.getFrequentRenterPoints(days);

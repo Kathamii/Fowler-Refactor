@@ -1,4 +1,5 @@
 import org.junit.Test;
+import program.Movie;
 
 import static org.junit.Assert.*;
 

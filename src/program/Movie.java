@@ -1,3 +1,5 @@
+package program;
+
 public class Movie
 {
     public static final int CHILDRENS = 2;
@@ -32,14 +34,14 @@ public class Movie
                 break;
 
             default:
-                throw new IllegalArgumentException("Incorrect Price Code");
+                throw new IllegalArgumentException("Incorrect program.Price Code");
         }
     }
     public String getTitle ()
     {
         return title;
     }
-    double getCharge(int days)
+    public double getCharge(int days)
     {
         double result = 0;
         switch (this.getPriceCode())
@@ -63,10 +65,12 @@ public class Movie
                     result += (days - 3) * 1.5;
                 }
                 break;
+            default:
+                break;
         }
         return result;
     }
-    int getFrequentRenterPoints(int days)
+    public int getFrequentRenterPoints(int days)
     {
         return this.price.getFrequentRenterPoints(days);
     }

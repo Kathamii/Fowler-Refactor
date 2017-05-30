@@ -1,3 +1,5 @@
+package program;
+
 class RegularPrice extends Price {
 
     @Override
